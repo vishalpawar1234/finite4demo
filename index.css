@@ -4,7 +4,7 @@
             padding: 0;
         }
       .top {
-            display: flex;
+              display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
@@ -548,7 +548,7 @@
                 margin-left: 15px;
             }
              .slick-prev, .slick-next {
-      margin-top: 740px;
+      margin-top: 730px;
       color: black;
     }
     .card {
@@ -589,7 +589,11 @@
             .search-icon-container {
                 margin-right: 5px;
             }
-
+.sliding_text{
+              margin-top: 15%;
+            display: inline-block;
+            margin-left: 70px;
+        }
             #search-input {
                 width: 80%;
             }
@@ -619,4 +623,5 @@
   }
  .p1{
       margin-top: 10px;
-      }}
+      }
+    }
