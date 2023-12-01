@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+         body{
+           font-family: 'Poppins', sans-serif;
+    }
+ .top {
+      width: 100%;
+      background-color: #024d87;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top img {
+      height: 80px;
+      width: 200px;
+      margin-left: 30px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin-right: 30px;
+    }
+    nav li {
+      margin: 0 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      position: relative;
+    }
+.hover-underline {
+    
+    display: inline-block;
+    position: relative;
+    
+}
+.hover-underline::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: orange;
+    bottom: 0;
+    left: 0;
+    transition: width 0.9s ; 
+}
+
+.hover-underline:hover::before {
+    width: 100%;
+}
+span{
+  color: #da7426;
+}
+ 
+        span{
+            color: #da7426;
+        }
+        .service_container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service_card {
+            width: calc(25% - 20px); /* 25% width for each card with some margin */
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #d2d2dc;
+            border-radius: 11px;
+            box-shadow: 0px 0px 5px 0px rgb(161, 163, 164);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content vertically */
+            text-align: center; /* Center text horizontally */
+        }
+        .service_card i{
+            font-size: 50px;
+            color: #007bff;
+            margin-top: 20px;
+        }
+         .service_container :hover{
+          background-color: #da7426;
+          color: white;
+         }
+ @media (max-width: 675px) {
+ .top {
+                flex-direction: column;
+                align-items: center;
+            }
+            .top img {
+                margin-left: 15px;
+                margin-bottom: 10px;
+            }
+
+            nav ul {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+
+            nav li {
+                margin: 0;
+                padding: 5px;
+            }
+             .service_container {
+                flex-direction: column;
+            }
+            .service_card {
+                width: 90%;
+            }
+}
+    </style>
+</head>
+<body>
+
+ <div class="top">
+    <img src="logo.png" alt="Logo">
+    <nav>
+      <ul>
+        <li class="hover-underline"><a href="Home2.html">Home</a></li>
+        <li class="hover-underline"><a href="AboutUs.html">About Us</a></li>
+        <li class="hover-underline"><a href="FirstPage.html">Products</a></li>
+        <li class="hover-underline"><a href="Service_Support.html">Service & Support</a></li>
+        <li class="hover-underline"><a href="Contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<h1 align="center" >Service &<span> Support</span></h1>
+
+    <div class="service_container">
+        <!-- First row of 4 divs -->
+        <div class="service_card">
+            <i class="fa">&#xf13d;</i>
+            <h2>Heavy Engineering</h2>
+            <p>Finite 4 manufactures & supplies custom design equipment for process industry .</p>
+        </div>
+        <div class="service_card">
+              <i class="fa">&#xf1b9;</i>
+            <h2>Automotive</h2>
+            <p>We provide comprehensive Engineering Services in Automotive sector.</p>
+        </div>
+        <div class="service_card">
+              <i class="fa">&#xf0fb;</i>
+            <h2>Defence</h2>
+            <p>Rich Experience & Knowledge of Defence Equipment & its manufacturing .Indigeneous Design to Delivery solutions</p>
+        </div>
+    </div>
+
+    <div class="service_container">
+        <!-- Second row of 4 divs -->
+        <div class="service_card">
+                          <i class="fa">&#xf109;</i>
+            <h2>Software</h2>
+            <p>Finite 4 offers customized , scalable & agile end to end software solutions to various industries.</p>
+        </div>
+        <div class="service_card">
+            <i class="fa fa-connectdevelop"></i>
+            <h2>Embedded</h2>
+            <p>We Design Systems to assist you right from conceptualization to delivery.Our solutions utilize cutting edge technology.</p>
+        </div>
+        <div class="service_card">
+          <i class="fa fa fa-opencart"></i>
+            <h2>Home Appliances</h2>
+            <p>We provide Engineering Services in Consumer Goods Sector which include A/C , refrigeration , washing & Kitchen Aid Equipment .</p>
+        </div>
+    </div>
+
+</body>
+</html>

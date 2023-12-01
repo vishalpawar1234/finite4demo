@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vishal Pawar - My Page</title>
+    <style>
+        body {
+            background-color: #3498db; /* Background color */
+            font-family: Arial, sans-serif;
+            color: #fff; /* Text color */
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: #e74c3c; /* Link color */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        p {
+            font-size: 18px;
+        }
+        .contact {
+            display: none;
+            padding: 20px;
+        }
+        .contact h2 {
+            font-size: 24px;
+        }
+        .contact p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vishal Pawar</h1>
+        <p>MY PAGE</p>
+        <p>Welcome to my personal webpage. I'm here to share my thoughts, experiences, and more. Feel free to <a href="javascript:void(0);" onclick="toggleContact()">contact me</a> if you'd like to connect or learn more about me.</p>
+    </div>
+    
+    <div class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch with me, you can reach out via mail at <a href="mailto:vishal.pawar@finite4.com">vishal.pawar@finite4.com</a>.</p>
+    </div>
+    
+    <script>
+        function toggleContact() {
+            var contact = document.querySelector(".contact");
+            if (contact.style.display === "none" || contact.style.display === "") {
+                contact.style.display = "block";
+            } else {
+                contact.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

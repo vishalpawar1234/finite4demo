@@ -1,0 +1,161 @@
+ @CHARSET "ISO-8859-1";
+ body{
+            background-color: white;
+            font-family: Arial;
+        }
+.top {
+      width: 100%;
+      background-color: #024d87;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top img {
+      height: 80px;
+      width: 200px;
+      margin-left: 30px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin-right: 30px;
+    }
+    nav li {
+      margin: 0 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      position: relative;
+    }
+.hover-underline {
+    
+    display: inline-block;
+    position: relative;
+    
+}
+.hover-underline::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: orange;
+    bottom: 0;
+    left: 0;
+    transition: width 0.9s ; 
+}
+
+.hover-underline:hover::before {
+    width: 100%;
+}
+     body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: 300px;
+}
+
+.motor-card {
+    position: relative;
+    width: 20%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.motor-card img {
+    width: 100%;
+    height: 50%; /* Equal width and height */
+}
+
+.top-name, .bottom-name {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0056b3;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+    height: 50px;
+}
+
+.motor-card:hover {
+    transform: translateY(-5px);
+}
+
+.motor-card:hover .overlay {
+    transform: translateY(0);
+}
+
+.overlay button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 15px 150px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-color: transparent;
+}
+
+.overlay button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+h2{
+        color: #333;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+.content {
+    height: 1000px; 
+    background-color: #f0f0f0; 
+}
+
+.cart {
+    width: 70px; 
+    position: relative; 
+}
+
+.fixed {
+    position: fixed;
+    bottom: 0px; 
+}
+  .footer {
+            display: flex;
+            width: 100%;
+            height: 250px;
+            background-color: #005776;
+            color: white;
+            font-family: source sans pro;
+            margin-top: 0px;
+        }
+
+        .footer div {
+            flex: 1;
+            text-align: center;
+        }
+
+      @media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack cards vertically on small screens */
+    }
+
+    .motor-card {
+        width: 100%; /* Take full width on small screens */
+    }
+}

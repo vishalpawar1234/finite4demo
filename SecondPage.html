@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+       <link rel="stylesheet" type="text/css" href="SecondPage.css">
+</head>
+<body>
+
+ <header>
+   <div class="top">
+    <img src="logo.png" alt="Logo">
+    <nav>
+      <ul>
+        <li class="hover-underline"><a href="Home2.html">Home</a></li>
+        <li class="hover-underline"><a href="AboutUs.html">About Us</a></li>
+        <li class="hover-underline"><a href="FirstPage.html">Products</a></li>
+        <li class="hover-underline"><a href="Service_Support.html">Service & Support</a></li>
+        <li class="hover-underline"><a href="Contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+ <div class="container">
+        <div class="motor-card">
+            <h3 class="top-name">10 HP 1000 RPM MOTOR</h3>
+            <img src="first.png" alt="Machine 1">
+            <p>Part Name : xxx</p>
+            <p>Part Size : xxx</p>
+             <div>
+        <button onclick="decrementCounter(1)">-</button>
+                <span id="counter1">0</span>
+        <button onclick="incrementCounter(1)">+</button>
+    </div>
+            <div class="overlay">
+                <button onclick="goToSecondPage()">Add To Cart</button>
+            </div>
+        </div>
+
+ <div class="motor-card">
+            <h3 class="top-name">15 HP 1000 RPM MOTOR</h3>
+            <img src="fourth.png" alt="Machine 2">
+            <p>Part Name : xxx</p>
+            <p>Part Size : xxx</p>
+             <div>
+        <button onclick="decrementCounter(2)">-</button>
+                <span id="counter2">0</span>
+        <button onclick="incrementCounter(2)">+</button>
+    </div>
+            <div class="overlay">
+                <button onclick="goToSecondPage()">Add To Cart</button>
+            </div>
+        </div>
+
+ <div class="motor-card">
+            <h3 class="top-name">20 HP 1000 RPM MOTOR</h3>
+            <img src="third.png" alt="Machine 3">
+            <p>Part Name : xxx</p>
+            <p>Part Size : xxx</p>
+             <div>
+        <button onclick="decrementCounter(3)">-</button>
+                <span id="counter3">0</span>
+        <button onclick="incrementCounter(3)">+</button>
+    </div>
+            <div class="overlay">
+                <button onclick="goToSecondPage()">Add To Cart</button>
+            </div>
+        </div>
+
+ <div class="motor-card">
+            <h3 class="top-name">25 HP 1000 RPM MOTOR</h3>
+            <img src="fifth.png" alt="Machine 4">
+            <p>Part Name : xxx</p>
+            <p>Part Size : xxx</p>
+             <div>
+        <button onclick="decrementCounter(4)">-</button>
+                <span id="counter4">0</span>
+        <button onclick="incrementCounter(4)">+</button>
+    </div>
+            <div class="overlay">
+                <button onclick="goToSecondPage()">Add To Cart</button>
+            </div>
+        </div>
+</div>
+
+
+ <div class="container">
+        <div class="motor-card">
+            <h3 class="top-name">30 HP 1000 RPM MOTOR</h3>
+            <img src="fifth.png" alt="Machine 5">
+            <p>Part Name : xxx</p>
+            <p>Part Size : xxx</p>
+             <div>
+        <button onclick="decrementCounter(5)">-</button>
+                <span id="counter5">0</span>
+        <button onclick="incrementCounter(5)">+</button>
+    </div>
+            <div class="overlay">
+                <button onclick="goToSecondPage()">Add To Cart</button>
+            </div>
+        </div>
+
+ <div class="motor-card">
+            <h3 class="top-name">35 HP 1000 RPM MOTOR</h3>
+            <img src="fourth.png" alt="Machine 6">
+            <p>Part Name : xxx</p>
+            <p>Part Size : xxx</p>
+             <div>
+        <button onclick="decrementCounter(6)">-</button>
+                <span id="counter6">0</span>
+        <button onclick="incrementCounter(6)">+</button>
+    </div>
+            <div class="overlay">
+                <button onclick="goToSecondPage()">Add To Cart</button>
+            </div>
+        </div>
+
+ <div class="motor-card">
+            <h3 class="top-name">40 HP 1000 RPM MOTOR</h3>
+            <img src="third.png" alt="Machine 7">
+            <p>Part Name : xxx</p>
+            <p>Part Size : xxx</p>
+             <div>
+        <button onclick="decrementCounter(7)">-</button>
+                <span id="counter7">0</span>
+        <button onclick="incrementCounter(7)">+</button>
+    </div>
+            <div class="overlay">
+                <button onclick="goToSecondPage()">Add To Cart</button>
+            </div>
+        </div>
+
+ <div class="motor-card">
+            <h3 class="top-name">45 HP 1000 RPM MOTOR</h3>
+            <img src="first.png" alt="Machine 8">
+            <p>Part Name : xxx</p>
+            <p>Part Size : xxx</p>
+             <div>
+        <button onclick="decrementCounter(8)">-</button>
+                <span id="counter8">0</span>
+        <button onclick="incrementCounter(8)">+</button>
+    </div>
+            <div class="overlay">
+                <button onclick="goToSecondPage()">Add To Cart</button>
+            </div>
+        </div>
+</div>
+
+      <script>
+            const counterItems = document.querySelectorAll('.counter-item');
+
+            counterItems.forEach(item => {
+                const incrementButton = item.querySelector('.increment');
+                const decrementButton = item.querySelector('.decrement');
+                const countElement = item.querySelector('.count');
+
+                let counter = 0;
+
+                incrementButton.addEventListener('click', () => {
+                    counter++;
+                    countElement.textContent = counter;
+                });
+
+                decrementButton.addEventListener('click', () => {
+                    if (counter > 0) {
+                        counter--;
+                        countElement.textContent = counter;
+                    }
+                });
+            });
+
+            // Add an event listener to save the counter values when the page unloads
+            window.addEventListener('beforeunload', () => {
+                const counterElements = document.querySelectorAll('.count');
+                const counters = Array.from(counterElements).map(element => parseInt(element.textContent));
+
+                // Store the counters in session storage
+                sessionStorage.setItem('counters', JSON.stringify(counters));
+            });
+        </script>
+    
+     <script>
+        // Counter variables
+        let counter1 = 0;
+        let counter2 = 0;
+        let counter3 = 0;
+        let counter4 = 0;
+        let counter5 = 0;
+        let counter6 = 0;
+        let counter7 = 0;
+        let counter8 = 0;
+        // Function to increment a counter
+        function incrementCounter(counterNumber) {
+            switch (counterNumber) {
+                case 1:
+                    counter1++;
+                    document.getElementById('counter1').textContent = counter1;
+                    break;
+                case 2:
+                    counter2++;
+                    document.getElementById('counter2').textContent = counter2;
+                    break;
+                case 3:
+                    counter3++;
+                    document.getElementById('counter3').textContent = counter3;
+                    break;
+                case 4:
+                    counter4++;
+                    document.getElementById('counter4').textContent = counter4;
+                    break;
+                case 5:
+                    counter5++;
+                    document.getElementById('counter5').textContent = counter5;
+                    break;
+                case 6:
+                    counter6++;
+                    document.getElementById('counter6').textContent = counter6;
+                    break;
+                case 7:
+                    counter7++;
+                    document.getElementById('counter7').textContent = counter7;
+                    break;
+                case 8:
+                    counter8++;
+                    document.getElementById('counter8').textContent = counter8;
+                    break;
+            }
+        }
+        // Function to decrement a counter
+        function decrementCounter(counterNumber) {
+            switch (counterNumber) {
+                case 1:
+                    if (counter1 > 0) {
+                        counter1--;
+                        document.getElementById('counter1').textContent = counter1;
+                    }
+                    break;
+                case 2:
+                    if (counter2 > 0) {
+                        counter2--;
+                        document.getElementById('counter2').textContent = counter2;
+                    }
+                    break;
+                case 3:
+                    if (counter3 > 0) {
+                        counter3--;
+                        document.getElementById('counter3').textContent = counter3;
+                    }
+                    break;
+                case 4:
+                    if (counter4 > 0) {
+                        counter4--;
+                        document.getElementById('counter4').textContent = counter4;
+                    }
+                    break;
+                case 5:
+                    if (counter5 > 0) {
+                        counter5--;
+                        document.getElementById('counter5').textContent = counter5;
+                    }
+                    break;
+                case 6:
+                    if (counter6 > 0) {
+                        counter6--;
+                        document.getElementById('counter6').textContent = counter6;
+                    }
+                    break;
+                case 7:
+                    if (counter7 > 0) {
+                        counter7--;
+                        document.getElementById('counter7').textContent = counter7;
+                    }
+                    break;
+                case 8:
+                    if (counter8 > 0) {
+                        counter8--;
+                        document.getElementById('counter8').textContent = counter8;
+                    }
+                    break;
+            }
+        }
+        // Function to navigate to the second page with counter values
+        function goToSecondPage() {
+            const counter1Value = counter1;
+            const counter2Value = counter2;
+            const counter3Value = counter3;
+            const counter4Value = counter4;
+            const counter5Value = counter5;
+            const counter6Value = counter6;
+            const counter7Value = counter7;
+            const counter8Value = counter8;
+            // Construct the URL with counter values as parameters
+            const url = `order2.html?counter1=${counter1Value}&counter2=${counter2Value}&counter3=${counter3Value}
+            &counter4=${counter4Value}&counter5=${counter5Value}&counter6=${counter6Value}&counter7=${counter7Value}
+            &counter8=${counter8Value}`;
+            // Redirect to the second page
+            window.location.href = url;
+        }
+    </script>
+ <footer>
+     <div class="footer">
+        <div class="contact-info">
+            <h3>PART & SERVICE</h3>
+            <p>10 HP Motor</p>
+            <p>15 HP Motor</p>
+            <p>20 HP Motor</p>
+            <p>25 HP Motor</p>
+            <p>30 HP Motor</p>
+            <p>35 HP Motor</p>
+        </div>
+
+        <div>
+            <h3>ABOUT US</h3>
+            <p>Our Team</p>
+            <p>Send Enquiry</p>
+            <p>Terms & Conditions</p>
+            <p>Privacy Policy</p>
+        </div>
+
+        <div>
+            <h3>HELP</h3>
+            <p>Contact Us</p>
+            <p>Help Center</p>
+            <p>Talk To Sales</p>
+        </div>
+    </div>
+   </footer> 
+</body>
+</html>

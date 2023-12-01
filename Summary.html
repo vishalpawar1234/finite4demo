@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <style>
+        body {
+            text-align:center;
+        }
+        .container {
+            max-width: 400px;
+            margin-top: 200px;
+            margin-left:40%;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+            border-radius:20px;;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .data-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        .data-value {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <div class="container">
+     <div>
+            <center>
+                <img src="confirm.gif" height="100px" width="100px">
+            </center>
+        </div>
+        <h1><span style="color:green;">Your Order<br>Is Confirmed</span></h1>
+    </div>
+    <script>
+        // Function to parse URL parameters
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+        // Get the counter values from URL parameters
+        const counter1Value = parseInt(getParameterByName('counter1'));
+        const counter2Value = parseInt(getParameterByName('counter2'));
+        const counter3Value = parseInt(getParameterByName('counter3'));
+        const counter4Value = parseInt(getParameterByName('counter4'));
+        const counter5Value = parseInt(getParameterByName('counter5'));
+        const counter6Value = parseInt(getParameterByName('counter6'));
+        const counter7Value = parseInt(getParameterByName('counter7'));
+        const counter8Value = parseInt(getParameterByName('counter8'));
+        // Get the container element
+        const container = document.querySelector('.container');
+        // Function to add a data group if the value is greater than or equal to 1
+        function addDataGroup(labelText, value) {
+            if (value >= 1) {
+                const dataGroup = document.createElement('div');
+                dataGroup.classList.add('data-group');
+                const label = document.createElement('label');
+                label.textContent = labelText;
+                const dataValue = document.createElement('span');
+                dataValue.classList.add('data-value');
+                dataValue.textContent = value;
+                dataGroup.appendChild(label);
+                dataGroup.appendChild(dataValue);
+                container.appendChild(dataGroup);
+            }
+        }
+        // Add data groups for each item with a value greater than or equal to 1
+        addDataGroup('10hp Motor:', counter1Value);
+        addDataGroup('15hp Motor:', counter2Value);
+        addDataGroup('20hp Motor:', counter3Value);
+        addDataGroup('25hp Motor:', counter4Value);
+        addDataGroup('30hp Motor:', counter5Value);
+        addDataGroup('35hp Motor:', counter6Value);
+        addDataGroup('40hp Motor:', counter7Value);
+        addDataGroup('45hp Motor:', counter8Value);
+    </script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+    <style type="text/css">
+    body{
+        font-family: 'Poppins', sans-serif;
+    }
+      .top {
+      width: 100%;
+      background-color: #024d87;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top img {
+      height: 80px;
+      width: 200px;
+      margin-left: 30px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin-right: 30px;
+    }
+    nav li {
+      margin: 0 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      position: relative;
+    }
+.hover-underline {
+ 
+    display: inline-block;
+    position: relative; 
+}
+.hover-underline::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: orange;
+    bottom: 0;
+    left: 0;
+    transition: width 0.9s ; 
+}
+
+.hover-underline:hover::before {
+    width: 100%;
+}
+.content{
+    width: 100%;
+    height: 400px;
+   display: flex;
+   justify-content: space-between;
+}
+.information{
+   width: 50%;
+   height: auto;
+   color: black;
+   text-align: center;
+   background-color: transparent;
+   border-radius: 20px;
+   margin-top: 30px;
+}
+p{
+    color: black;
+    font-size: 18px;
+    text-align: center;
+}
+  h2{
+  color: #da7426;
+}
+.div2{
+  width: 50%;
+margin-top: 30px;
+border-radius: 20px;
+}
+.div3{
+    width: 30%;
+    margin-top: 10px;
+    margin-left: 30%;
+    border-radius: 20px;
+    align-content: center;
+    align-items: center;
+}
+h2:hover{
+    text-decoration: underline;
+    text-decoration-color: #da7426;
+}
+    </style>
+</head>
+<body>
+  <header>
+   <div class="top">
+    <img src="logo.png" alt="Logo">
+    <nav>
+      <ul>
+        <li class="hover-underline"><a href="Home2.html">Home</a></li>
+        <li class="hover-underline"><a href="AboutUs.html">About Us</a></li>
+        <li class="hover-underline"><a href="FirstPage.html">Products</a></li>
+        <li class="hover-underline"><a href="Service_Support.html">Service & Support</a></li>
+        <li class="hover-underline"><a href="Contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<nav>
+    <div class="content">
+       <div class="information">
+<h2> PRODUCT ENGINEERING SERVICES</h2> 
+<p> Mechanical Design Services(Onsite & Offshore)</p>
+<p>Embedded Technologies</p>
+<p> Software & IT Services </p>
+<p>Medical Equipment Engineering</p>
+<p> Software Product Sales</p>
+<p>We are authorized channel partners for Altair.</p>
+
+        </div>
+    <img src="worker.jpg" style="border-radius: 20px;" width="100%" height="90%" class="div2">
+
+    </div>
+
+<div class="div3">
+    <h2 align="center">ABOUT US</h2>
+     <p class="para">Finite 4 was established in 2007 with a view to provide best in class, cost effective, and efficient 
+Engineering services globally.We provide services to clients in India, Europe, Asia-Pacific, Africa, USA and many soon.
+The agility of Finite 4 in adopting the new technology & creating expertise has helped it to grow significantly even during the 
+economic slowdown.The growth of company during the period of last few years has been 6 times that of the market's growth.</p>
+</div>
+
+</nav>
+</body>
+</html>

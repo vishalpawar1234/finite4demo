@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Quantity</title>
+    <script>
+        function updateQuantity(productName, quantity) {
+            // Store the product quantity in localStorage
+            localStorage.setItem(productName, quantity);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h2>Product 1</h2>
+        <button onclick="decrement('product1')">-</button>
+        <span id="quantity1">0</span>
+        <button onclick="increment('product1')">+</button>
+    </div>
+
+    <div>
+        <h2>Product 2</h2>
+        <button onclick="decrement('product2')">-</button>
+        <span id="quantity2">0</span>
+        <button onclick="increment('product2')">+</button>
+    </div>
+
+    <script>
+        function increment(productName) {
+            let quantityElement = document.getElementById(`quantity${productName.charAt(productName.length-1)}`);
+            let currentQuantity = parseInt(quantityElement.innerText, 10);
+            quantityElement.innerText = currentQuantity + 1;
+
+            updateQuantity(productName, currentQuantity + 1);
+        }
+
+        function decrement(productName) {
+            let quantityElement = document.getElementById(`quantity${productName.charAt(productName.length-1)}`);
+            let currentQuantity = parseInt(quantityElement.innerText, 10);
+            
+            if (currentQuantity > 0) {
+                quantityElement.innerText = currentQuantity - 1;
+                updateQuantity(productName, currentQuantity - 1);
+            }
+        }
+    </script>
+</body>
+</html>

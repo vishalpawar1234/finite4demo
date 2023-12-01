@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+     
+:root {
+  --secondary-color: white;
+  --contrast-color: black;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: -10;
+  background-color: var(--contrast-color);
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+  animation: expand .15s ease forwards;
+  background-color: var(--secondary-color);
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: all .8s ease;
+}
+
+.container_content {
+ width: 40%;
+}
+
+.container_img {
+  width: 70%;
+  animation: slideIn 1.5s ease-in-out forwards;
+}
+
+.par {
+  height: auto;
+  overflow: hidden;
+}
+
+p{
+  line-height: 28px;
+  transform: translateY(300px);
+  animation: slideUp .8s ease-in-out forwards .8s;
+}
+ span{
+            color: #da7426;
+        }
+
+.title {
+  overflow: hidden;
+  height: auto;
+}
+  .about_button {
+          border: 2px solid black;
+          background-color: #da7426;
+          color: white;
+          padding: 14px 40px;
+          font-size: 16px;
+          cursor: pointer;
+          border-color: #da7426;
+          margin-top: 20px;
+          margin-left: 300px;
+        }
+         .about_button:hover {
+           border-color: #ff9800;
+           background: white;  
+           color: #da7426;
+        }
+
+h1 {
+    font-size: 40px;
+    color: var(--contrast-color);
+    margin-bottom: 20px;
+    transform: translateY(100px);
+    animation: slideUp .8s ease forwards .5s;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(500px) scale(.2);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: translateX(1400px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+    </style>
+</head>
+<body>
+<div class= 'container'>
+<div class="container_content">
+<div class="container_content_inner">
+<div class="title">
+              <h1 align="center">About<span> Us</span></h1>
+</div>
+<div class="par">
+ <p align="center">Finite 4 was established in 2007 with a view to provide best in class, cost effective, and efficient 
+Engineering services globally.We provide services to clients in India, Europe, Asia-Pacific, Africa, USA and many soon.
+The agility of Finite 4 in adopting the new technology & creating expertise has helped it to grow significantly even during the 
+economic slowdown.The growth of company during the period of last few years has been 6 times that of the market's growth.</p>
+</div>
+<form action="AboutUs.html">
+<button class="about_button">
+        Read More
+    </button>
+</form>
+</div>
+</div>
+ <div class="container_outer_img">
+ <div class="img-inner">
+ <img src="worker.jpg"  alt="" class="container_img"/>
+       </div>
+     </div>
+  </div>
+<div class="overlay"></div>
+</body>
+</html>

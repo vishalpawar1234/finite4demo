@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Carousel</title>
+    <style type="text/css">
+        body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    width: 100vw;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 3em;
+    padding: 50px;
+    background-color: #3498db;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item">1</div>
+            <div class="carousel-item">2</div>
+            <div class="carousel-item">3</div>
+            <div class="carousel-item">4</div>
+        </div>
+        <button class="prev-btn" onclick="prevSlide()">Previous</button>
+        <button class="next-btn" onclick="nextSlide()">Next</button>
+    </div>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+    const carousel = document.querySelector('.carousel');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const translateValue = -currentIndex * 100 + 'vw';
+        carousel.style.transform = 'translateX(' + translateValue + ')';
+    }
+
+    function rotateCarousel() {
+        currentIndex = (currentIndex + 1) % 4;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + 4) % 4;
+        updateCarousel();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % 4;
+        updateCarousel();
+    }
+
+    // Set an interval to rotate the carousel every 3 seconds
+    setInterval(rotateCarousel, 3000);
+});
+
+    </script>
+</body>
+</html>
