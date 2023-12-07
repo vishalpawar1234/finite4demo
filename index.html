@@ -10,8 +10,8 @@
             <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
-    <title>Responsive Header</title>
-           <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Home</title>
+           <link rel="stylesheet" type="text/css" href="sample.css">
 
 </head>
 <body>
@@ -51,9 +51,9 @@
   <div class="row">
         <div class="about-us">
             <h1 align="center">About<span> Us</span></h1>
-            <p align="center">Finite 4 was established in 2007 with a view to provide best in class, cost effective, and efficient 
+            <p align="center">Finite 4 was established in 2007 with a view to provide best in class, cost effective, and efficient
 Engineering services globally.We provide services to clients in India, Europe, Asia-Pacific, Africa, USA and many soon.
-The agility of Finite 4 in adopting the new technology & creating expertise has helped it to grow significantly even during the 
+The agility of Finite 4 in adopting the new technology & creating expertise has helped it to grow significantly even during the
 economic slowdown.The growth of company during the period of last few years has been 6 times that of the market's growth.</p>
 
 <form action="AboutUs.html">
@@ -240,54 +240,10 @@ economic slowdown.The growth of company during the period of last few years has 
         </div>
         <div>
 
-    <div class="progress-wrap">
-      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-      </svg>
-  </div>
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-  <script type="text/javascript">
-    (function($) { "use strict";
-
-$(document).ready(function(){"use strict";
-
-    //Scroll back to top
-
-    var progressPath = document.querySelector('.progress-wrap path');
-    var pathLength = progressPath.getTotalLength();
-    progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
-    progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-    progressPath.style.strokeDashoffset = pathLength;
-    progressPath.getBoundingClientRect();
-    progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
-    var updateProgress = function () {
-      var scroll = $(window).scrollTop();
-      var height = $(document).height() - $(window).height();
-      var progress = pathLength - (scroll * pathLength / height);
-      progressPath.style.strokeDashoffset = progress;
-    }
-    updateProgress();
-    $(window).scroll(updateProgress);
-    var offset = 50;
-    var duration = 2000;
-    jQuery(window).on('scroll', function() {
-      if (jQuery(this).scrollTop() > offset) {
-        jQuery('.progress-wrap').addClass('active-progress');
-      } else {
-        jQuery('.progress-wrap').removeClass('active-progress');
-      }
-    });
-    jQuery('.progress-wrap').on('click', function(event) {
-      event.preventDefault();
-      jQuery('html, body').animate({scrollTop: 0}, duration);
-      return false;
-    })
-  });
-
-})(jQuery);
-  </script>
+    
       <iframe class="foo2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.3630910784386!2d73.77946607567299!3d18.
-      512487169420304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2be5ab0a4ff93%3A0x3f9c3b2f8827ebcf!2sFinite%20four
-      %20office!5e0!3m2!1sen!2sin!4v1696932098269!5m2!1sen!2sin"></iframe>
+      512487169420304!2m3!1f0!2f0!3f0!3m2!i1024!2i768!4f131!3m3!1m2!1s0x3bc2be5ab0a4ff93%3A0x3f9c3b2f8827ebcf!2sFinite%20four
+      %20office!5e0!3m2!1sen!2sin!4v169932098269!5m2!1sen!2sin"></iframe>
+    </div></div></footer>
 </body>
 </html>
