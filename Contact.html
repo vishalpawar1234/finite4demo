@@ -3,38 +3,120 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
 <title>Contact</title>
 	<style type="text/css">
-	body{
-	     font-family: 'Poppins', sans-serif;
-	  }
-	.top {
-      width: 100%;
-      background-color: #024d87;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+	/*----------- Header Section -----------*/
+   body{
+           font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(bg.jpg);
     }
-    .top img {
-      height: 80px;
-      width: 200px;
-      margin-left: 30px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin-right: 30px;
-    }
-    nav li {
-      margin: 0 10px;
-    }
-    nav a {
-      text-decoration: none;
-      color: white;
-      position: relative;
-    }
+      header {
+            background-color: #024d87;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #da7426;
+        }
+
+        #logo {
+             height: 80px;
+            width: 200px;
+            margin-left: 30px;
+        }
+
+        #menu-btn {
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+           margin-right: 8%;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+
+        }
+           nav li {
+            margin: 0 15px;
+        }
+       nav a{
+                color: white;
+                text-decoration: none;
+            }
+             .hover-underline {
+            display: inline-block;
+            position: relative;
+        }
+        .hover-underline::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: orange;
+            bottom: 0;
+            left: 0;
+            transition: width 0.9s;
+        }
+        .hover-underline:hover::before {
+            width: 100%;
+        }
+
+       /*----------- Header For Smaller Screen-----------*/
+
+          @media only screen and (max-width: 675px) and (max-width: 768px) {
+
+        #menu-btn {
+                    display: block;
+                    color: #da7426;
+                }
+            .login {
+                float: none;
+                margin: 10px;
+              }
+               nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 83px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+            }
+             nav.show {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+            nav a{
+                color: white;
+                text-decoration: none;
+            }
+         
+   }
+
+          /*----------- Header For Smaller Screen Closed-----------*/
+
+   /*----------- Header Section Close-----------*/
 
 .hover-underline {
     display: inline-block;
@@ -55,14 +137,13 @@
 }
 		.p , a{
 		color:black;
-    font-weight: bold;
     text-decoration: none;
         }
         span{
         	color: #da7426;
         }
         .media{
-  margin-top: 50px;
+  margin-top: 20px;
   display: flex;
  width: 100%;
   height: 80px;
@@ -72,7 +153,7 @@
 .in{
   display: flex;
   align-items: center;
-  margin-left:  350px;
+  margin-left:  10%;
 }
  .in img {
       margin-right:  10px;
@@ -90,7 +171,7 @@
          @media (max-width: 675px) {
           .media{
          flex-direction: column;
-           height: 210px;
+           height: auto;
           }
         .in {
     margin: 10px 0; /* Adjust margin for better spacing on small screens */
@@ -107,44 +188,32 @@
             margin-left: 0px;
             color: white;
         }
-            .top {
-                flex-direction: column;
-                align-items: center;
-            }
-            .top img {
-                margin-left: 10px;
-                margin-bottom: 10px;
-            }
-
-            nav ul {
-                margin: 0;
-                padding: 0;
-                text-align: center;
-            }
-
-            nav li {
-                margin: 0;
-                padding: 5px;
-            }
+          
 }
 	</style>
 </head>
 <body>
-
  <header>
-   <div class="top">
-    <img src="logo.png" alt="Logo">
-    <nav>
-      <ul>
-        <li class="hover-underline"><a href="index.html">Home</a></li>
-        <li class="hover-underline"><a href="AboutUs.html">About Us</a></li>
-        <li class="hover-underline"><a href="FirstPage.html">Products</a></li>
-        <li class="hover-underline"><a href="Service_Support.html">Service & Support</a></li>
-        <li class="hover-underline"><a href="Contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+        <img src="logo.png" alt="Company Logo" id="logo">
+        <div id="menu-btn">&#9776;</div>
+        <nav>
+            <ul>
+                <li class="hover-underline"><a href="index.html">Home</a></li>
+                <li class="hover-underline"><a href="AboutUs.html">About Us</a></li>
+                <li class="hover-underline"><a href="FirstPage.html">Products</a></li>
+                <li class="hover-underline"><a href="Service_Support.html">Service & Support</a></li>
+                <li class="hover-underline"><a href="Contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        
+        </nav>
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('show');
+        });
+    </script>
+        </header>
+
 
   <h1 align="center">Contact <span>Us</span></h1>
 <center>
