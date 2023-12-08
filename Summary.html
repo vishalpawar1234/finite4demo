@@ -3,92 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Summary</title>
+    <title>User Registration and Order Summary</title>
     <style>
         body {
-            text-align:center;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        .container {
-            max-width: 400px;
-            margin-top: 200px;
-            margin-left:40%;
+ span{
+            color: #da7426;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #registration-form, #order-summary {
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 12px;
             padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-            border-radius:20px;;
-        }
-        h1 {
             text-align: center;
-            color: #333;
+            min-width: 300px;
+            box-sizing: border-box;
         }
-        .data-group {
+
+        h1 {
+            color: #fff;
+            font-size: 28px;
             margin-bottom: 20px;
         }
-        label {
-            font-weight: bold;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
         }
-        .data-value {
+
+        label {
+            margin-bottom: 8px;
+            color: #ecf0f1;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 4px;
+            background-color: #ecf0f1;
+            color: #333;
+        }
+
+        button {
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
             font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+
+        #order-summary {
+            background-color: #2c3e50;
+            color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            min-width: 300px;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        .product-container {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #34495e;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ecf0f1;
+            margin-right: 20px;
+        }
+
+        .product-count {
+            font-size: 16px;
+            color: #bdc3c7;
+        }
+
+        /* Added style for the horizontal line */
+        hr {
+            border: none;
+            border-top: 1px solid #34495e;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        @media screen and (min-width: 768px) {
+            #container {
+                flex-direction: row;
+            }
+
+            #registration-form, #order-summary {
+                flex: 1;
+                margin: 20px;
+            }
+
+            #order-summary {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
 <body>
-<form action="">
-    <div class="container">
-     <div>
-            <center>
-                <img src="confirm.gif" height="100px" width="100px">
-            </center>
+    <div id="container">
+        <div id="registration-form">
+            <h1>Order <span>Form</span></h1>
+            <form>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="tel" id="mobileNumber" name="mobileNumber" required>
+
+                <label for="billingAddress">Billing Address:</label>
+                <textarea id="billingAddress" name="billingAddress" rows="4" required></textarea>
+
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required>
+
+                <label for="paymentMethod">Payment Method:</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="creditCard">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bankTransfer">Bank Transfer</option>
+                </select>
+
+                <button type="button" onclick="registerUser()">Order</button>
+            </form>
         </div>
-        <h1><span style="color:green;">Your Order<br>Is Confirmed</span></h1>
+
+        <!-- Horizontal line between the form and order summary -->
+        <hr>
+
+        <div id="order-summary">
+            <h1>Order <span>Summary</span></h1>
+            <!-- Dynamic product containers will be added here by JavaScript -->
+        </div>
     </div>
+
     <script>
-        // Function to parse URL parameters
+        // Function to retrieve URL parameters
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
             name = name.replace(/[\[\]]/g, '\\$&');
-            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-            const results = regex.exec(url);
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
             if (!results) return null;
             if (!results[2]) return '';
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
-        // Get the counter values from URL parameters
-        const counter1Value = parseInt(getParameterByName('counter1'));
-        const counter2Value = parseInt(getParameterByName('counter2'));
-        const counter3Value = parseInt(getParameterByName('counter3'));
-        const counter4Value = parseInt(getParameterByName('counter4'));
-        const counter5Value = parseInt(getParameterByName('counter5'));
-        const counter6Value = parseInt(getParameterByName('counter6'));
-        const counter7Value = parseInt(getParameterByName('counter7'));
-        const counter8Value = parseInt(getParameterByName('counter8'));
-        // Get the container element
-        const container = document.querySelector('.container');
-        // Function to add a data group if the value is greater than or equal to 1
-        function addDataGroup(labelText, value) {
-            if (value >= 1) {
-                const dataGroup = document.createElement('div');
-                dataGroup.classList.add('data-group');
-                const label = document.createElement('label');
-                label.textContent = labelText;
-                const dataValue = document.createElement('span');
-                dataValue.classList.add('data-value');
-                dataValue.textContent = value;
-                dataGroup.appendChild(label);
-                dataGroup.appendChild(dataValue);
-                container.appendChild(dataGroup);
+
+        // Retrieve counter values from URL parameters
+        const counters = [
+            parseInt(getParameterByName('counter1')) || 0,
+            parseInt(getParameterByName('counter2')) || 0,
+            parseInt(getParameterByName('counter3')) || 0,
+            parseInt(getParameterByName('counter4')) || 0,
+            parseInt(getParameterByName('counter5')) || 0,
+            parseInt(getParameterByName('counter6')) || 0,
+            parseInt(getParameterByName('counter7')) || 0,
+            parseInt(getParameterByName('counter8')) || 0,
+            parseInt(getParameterByName('counter9')) || 0,
+            parseInt(getParameterByName('counter10')) || 0,
+            parseInt(getParameterByName('counter11')) || 0,
+            parseInt(getParameterByName('counter12')) || 0
+        ];
+
+        // Function to create a product container
+        function createProductContainer(productNumber, counter) {
+            const productContainer = document.createElement('div');
+            productContainer.classList.add('product-container');
+
+            const productName = document.createElement('div');
+            productName.classList.add('product-name');
+            productName.textContent = `Product ${productNumber}`;
+
+            const productCount = document.createElement('div');
+            productCount.classList.add('product-count');
+            productCount.textContent = `Count: ${counter}`;
+
+            productContainer.appendChild(productName);
+            productContainer.appendChild(productCount);
+
+            return productContainer;
+        }
+
+        // Loop through counters and dynamically create product containers
+        for (let i = 0; i < counters.length; i++) {
+            if (counters[i] > 0) {
+                const productContainer = createProductContainer(i + 1, counters[i]);
+                document.getElementById('order-summary').appendChild(productContainer);
             }
         }
-        // Add data groups for each item with a value greater than or equal to 1
-        addDataGroup('10hp Motor:', counter1Value);
-        addDataGroup('15hp Motor:', counter2Value);
-        addDataGroup('20hp Motor:', counter3Value);
-        addDataGroup('25hp Motor:', counter4Value);
-        addDataGroup('30hp Motor:', counter5Value);
-        addDataGroup('35hp Motor:', counter6Value);
-        addDataGroup('40hp Motor:', counter7Value);
-        addDataGroup('45hp Motor:', counter8Value);
+
+        // Function to handle user registration
+        function registerUser() {
+            // Add your logic to handle user registration here
+            alert('Order Confirmed...!!');
+        }
     </script>
-    </form>
 </body>
 </html>
