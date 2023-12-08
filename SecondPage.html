@@ -1,187 +1,220 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-       <link rel="stylesheet" type="text/css" href="SecondPage.css">
+     <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+              <link rel="icon" type="image/x-icon" href="logo.png">
+    <title>SecondPage</title>
+              <link rel="stylesheet" type="text/css" href="SecondPage.css">
+
 </head>
 <body>
 
- <header>
-   <div class="top">
-    <img src="logo.png" alt="Logo">
-    <nav>
-      <ul>
-        <li class="hover-underline"><a href="index.html">Home</a></li>
-        <li class="hover-underline"><a href="AboutUs.html">About Us</a></li>
-        <li class="hover-underline"><a href="FirstPage.html">Products</a></li>
-        <li class="hover-underline"><a href="Service_Support.html">Service & Support</a></li>
-        <li class="hover-underline"><a href="Contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+
+  <header>
+        <img src="logo.png" alt="Company Logo" id="logo">
+        <div id="menu-btn">&#9776;</div>
+        <nav>
+            <ul>
+                <li class="hover-underline"><a href="index.html">Home</a></li>
+                <li class="hover-underline"><a href="AboutUs.html">About Us</a></li>
+                <li class="hover-underline"><a href="FirstPage.html">Products</a></li>
+                <li class="hover-underline"><a href="Service_Support.html">Service & Support</a></li>
+                <li class="hover-underline"><a href="Contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        
+        </nav>
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('show');
+        });
+    </script>
+        </header>
 
 
- <div class="container">
-        <div class="motor-card">
-            <h3 class="top-name">10 HP 1000 RPM MOTOR</h3>
-            <img src="first.png" alt="Machine 1">
-            <p>Part Name : xxx</p>
-            <p>Part Size : xxx</p>
-             <div>
-        <button onclick="decrementCounter(1)">-</button>
+<!-- Row of Product Containers -->
+<div class="product-container1">
+
+    <!-- Product 1 -->
+    <div class="product-container">
+        <img src="30hp.jpg" alt="Product 1" class="product-image">
+        <div class="product-name">Product 1</div>
+        <div class="action-buttons">
+            <div class="quantity-buttons">
+                <button class="quantity" onclick="decrementCounter('counter1')">-</button>
                 <span id="counter1">0</span>
-        <button onclick="incrementCounter(1)">+</button>
-    </div>
-            <div class="overlay">
-                <button onclick="goToSecondPage()">Add To Cart</button>
+                <button class="quantity" onclick="incrementCounter('counter1')">+</button>
             </div>
+            <button class="add-to-cart" onclick="goToSecondPage()">Add to Cart</button>
         </div>
+    </div>
 
- <div class="motor-card">
-            <h3 class="top-name">15 HP 1000 RPM MOTOR</h3>
-            <img src="fourth.png" alt="Machine 2">
-            <p>Part Name : xxx</p>
-            <p>Part Size : xxx</p>
-             <div>
-        <button onclick="decrementCounter(2)">-</button>
+    <!-- Product 2 -->
+    <div class="product-container">
+        <img src="10hp.jpg" alt="Product 2" class="product-image">
+        <div class="product-name">Product 2</div>
+        <div class="action-buttons">
+            <div class="quantity-buttons">
+                <button class="quantity" onclick="decrementCounter('counter2')">-</button>
                 <span id="counter2">0</span>
-        <button onclick="incrementCounter(2)">+</button>
-    </div>
-            <div class="overlay">
-                <button onclick="goToSecondPage()">Add To Cart</button>
+                <button class="quantity" onclick="incrementCounter('counter2')">+</button>
             </div>
+            <button class="add-to-cart" onclick="goToSecondPage()">Add to Cart</button>
         </div>
+    </div>
 
- <div class="motor-card">
-            <h3 class="top-name">20 HP 1000 RPM MOTOR</h3>
-            <img src="third.png" alt="Machine 3">
-            <p>Part Name : xxx</p>
-            <p>Part Size : xxx</p>
-             <div>
-        <button onclick="decrementCounter(3)">-</button>
+    <!-- Product 3 -->
+    <div class="product-container">
+        <img src="40.jpg" alt="Product 3" class="product-image">
+        <div class="product-name">Product 3</div>
+        <div class="action-buttons">
+            <div class="quantity-buttons">
+                <button class="quantity" onclick="decrementCounter('counter3')">-</button>
                 <span id="counter3">0</span>
-        <button onclick="incrementCounter(3)">+</button>
-    </div>
-            <div class="overlay">
-                <button onclick="goToSecondPage()">Add To Cart</button>
+                <button class="quantity" onclick="incrementCounter('counter3')">+</button>
             </div>
+            <button class="add-to-cart" onclick="goToSecondPage()">Add to Cart</button>
         </div>
+    </div>
 
- <div class="motor-card">
-            <h3 class="top-name">25 HP 1000 RPM MOTOR</h3>
-            <img src="fifth.png" alt="Machine 4">
-            <p>Part Name : xxx</p>
-            <p>Part Size : xxx</p>
-             <div>
-        <button onclick="decrementCounter(4)">-</button>
-                <span id="counter4">0</span>
-        <button onclick="incrementCounter(4)">+</button>
-    </div>
-            <div class="overlay">
-                <button onclick="goToSecondPage()">Add To Cart</button>
-            </div>
+  <!-- Product 4 -->
+<div class="product-container">
+    <img src="45hp.jpg" alt="Product 4" class="product-image">
+    <div class="product-name">Product 4</div>
+    <div class="action-buttons">
+        <div class="quantity-buttons">
+            <button class="quantity" onclick="decrementCounter('counter4')">-</button>
+            <span id="counter4">0</span>
+            <button class="quantity" onclick="incrementCounter('counter4')">+</button>
         </div>
+        <button class="add-to-cart" onclick="goToSecondPage()">Add to Cart</button>
+    </div>
 </div>
 
 
- <div class="container">
-        <div class="motor-card">
-            <h3 class="top-name">30 HP 1000 RPM MOTOR</h3>
-            <img src="fifth.png" alt="Machine 5">
-            <p>Part Name : xxx</p>
-            <p>Part Size : xxx</p>
-             <div>
-        <button onclick="decrementCounter(5)">-</button>
+ <!-- Product 5 -->
+    <div class="product-container">
+        <img src="40.jpg" alt="Product 5" class="product-image">
+        <div class="product-name">Product 5</div>
+        <div class="action-buttons">
+            <div class="quantity-buttons">
+                <button class="quantity" onclick="decrementCounter('counter5')">-</button>
                 <span id="counter5">0</span>
-        <button onclick="incrementCounter(5)">+</button>
-    </div>
-            <div class="overlay">
-                <button onclick="goToSecondPage()">Add To Cart</button>
+                <button class="quantity" onclick="incrementCounter('counter5')">+</button>
             </div>
+            <button class="add-to-cart" onclick="goToSecondPage()">Add to Cart</button>
         </div>
+    </div>
 
- <div class="motor-card">
-            <h3 class="top-name">35 HP 1000 RPM MOTOR</h3>
-            <img src="fourth.png" alt="Machine 6">
-            <p>Part Name : xxx</p>
-            <p>Part Size : xxx</p>
-             <div>
-        <button onclick="decrementCounter(6)">-</button>
+    <!-- Product 6 -->
+    <div class="product-container">
+        <img src="45hp.jpg" alt="Product 6" class="product-image">
+        <div class="product-name">Product 6</div>
+        <div class="action-buttons">
+            <div class="quantity-buttons">
+                <button class="quantity" onclick="decrementCounter('counter6')">-</button>
                 <span id="counter6">0</span>
-        <button onclick="incrementCounter(6)">+</button>
-    </div>
-            <div class="overlay">
-                <button onclick="goToSecondPage()">Add To Cart</button>
+                <button class="quantity" onclick="incrementCounter('counter6')">+</button>
             </div>
+            <button class="add-to-cart" onclick="goToSecondPage()">Add to Cart</button>
         </div>
-
- <div class="motor-card">
-            <h3 class="top-name">40 HP 1000 RPM MOTOR</h3>
-            <img src="third.png" alt="Machine 7">
-            <p>Part Name : xxx</p>
-            <p>Part Size : xxx</p>
-             <div>
-        <button onclick="decrementCounter(7)">-</button>
-                <span id="counter7">0</span>
-        <button onclick="incrementCounter(7)">+</button>
     </div>
-            <div class="overlay">
-                <button onclick="goToSecondPage()">Add To Cart</button>
-            </div>
-        </div>
-
- <div class="motor-card">
-            <h3 class="top-name">45 HP 1000 RPM MOTOR</h3>
-            <img src="first.png" alt="Machine 8">
-            <p>Part Name : xxx</p>
-            <p>Part Size : xxx</p>
-             <div>
-        <button onclick="decrementCounter(8)">-</button>
-                <span id="counter8">0</span>
-        <button onclick="incrementCounter(8)">+</button>
-    </div>
-            <div class="overlay">
-                <button onclick="goToSecondPage()">Add To Cart</button>
-            </div>
-        </div>
 </div>
 
-      <script>
-            const counterItems = document.querySelectorAll('.counter-item');
+         <!-- Row of Product Containers -->
+<div class="product-container1">
 
-            counterItems.forEach(item => {
-                const incrementButton = item.querySelector('.increment');
-                const decrementButton = item.querySelector('.decrement');
-                const countElement = item.querySelector('.count');
+    <!-- Product 7 -->
+    <div class="product-container">
+        <img src="30hp.jpg" alt="Product 7" class="product-image">
+        <div class="product-name">Product 7</div>
+        <div class="action-buttons">
+            <div class="quantity-buttons">
+                <button class="quantity" onclick="decrementCounter('counter7')">-</button>
+                <span id="counter7">0</span>
+                <button class="quantity" onclick="incrementCounter('counter7')">+</button>
+            </div>
+            <button class="add-to-cart" onclick="goToSecondPage()">Add to Cart</button>
+        </div>
+    </div>
 
-                let counter = 0;
+    <!-- Product 8 -->
+    <div class="product-container">
+        <img src="10hp.jpg" alt="Product 8" class="product-image">
+        <div class="product-name">Product 8</div>
+        <div class="action-buttons">
+            <div class="quantity-buttons">
+                <button class="quantity" onclick="decrementCounter('counter8')">-</button>
+                <span id="counter8">0</span>
+                <button class="quantity" onclick="incrementCounter('counter8')">+</button>
+            </div>
+            <button class="add-to-cart" onclick="goToSecondPage()">Add to Cart</button>
+        </div>
+    </div>
 
-                incrementButton.addEventListener('click', () => {
-                    counter++;
-                    countElement.textContent = counter;
-                });
+    <!-- Product 9 -->
+    <div class="product-container">
+        <img src="40.jpg" alt="Product 9" class="product-image">
+        <div class="product-name">Product 9</div>
+        <div class="action-buttons">
+            <div class="quantity-buttons">
+                <button class="quantity" onclick="decrementCounter('counter9')">-</button>
+                <span id="counter9">0</span>
+                <button class="quantity" onclick="incrementCounter('counter9')">+</button>
+            </div>
+            <button class="add-to-cart" onclick="goToSecondPage()">Add to Cart</button>
+        </div>
+    </div>
 
-                decrementButton.addEventListener('click', () => {
-                    if (counter > 0) {
-                        counter--;
-                        countElement.textContent = counter;
-                    }
-                });
-            });
+    <!-- Product 10 -->
+    <div class="product-container">
+        <img src="45hp.jpg" alt="Product 10" class="product-image">
+        <div class="product-name">Product 10</div>
+        <div class="action-buttons">
+            <div class="quantity-buttons">
+                <button class="quantity" onclick="decrementCounter('counter10')">-</button>
+                <span id="counter10">0</span>
+                <button class="quantity" onclick="incrementCounter('counter10')">+</button>
+            </div>
+            <button class="add-to-cart" onclick="goToSecondPage()">Add to Cart</button>
+        </div>
+    </div>
 
-            // Add an event listener to save the counter values when the page unloads
-            window.addEventListener('beforeunload', () => {
-                const counterElements = document.querySelectorAll('.count');
-                const counters = Array.from(counterElements).map(element => parseInt(element.textContent));
 
-                // Store the counters in session storage
-                sessionStorage.setItem('counters', JSON.stringify(counters));
-            });
-        </script>
-    
-     <script>
-        // Counter variables
+ <!-- Product 11 -->
+    <div class="product-container">
+        <img src="40.jpg" alt="Product 11" class="product-image">
+        <div class="product-name">Product 11</div>
+        <div class="action-buttons">
+            <div class="quantity-buttons">
+                <button class="quantity" onclick="decrementCounter('counter11')">-</button>
+                <span id="counter11">0</span>
+                <button class="quantity" onclick="incrementCounter('counter11')">+</button>
+            </div>
+            <button class="add-to-cart" onclick="goToSecondPage()">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Product 12 -->
+    <div class="product-container">
+        <img src="45hp.jpg" alt="Product 12" class="product-image">
+        <div class="product-name">Product 12</div>
+        <div class="action-buttons">
+            <div class="quantity-buttons">
+                <button class="quantity" onclick="decrementCounter('counter12')">-</button>
+                <span id="counter12">0</span>
+                <button class="quantity" onclick="incrementCounter('counter12')">+</button>
+            </div>
+            <button class="add-to-cart" onclick="goToSecondPage()">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        // Counter variables for each product
         let counter1 = 0;
         let counter2 = 0;
         let counter3 = 0;
@@ -190,96 +223,146 @@
         let counter6 = 0;
         let counter7 = 0;
         let counter8 = 0;
+        let counter9 = 0;
+        let counter10 = 0;
+        let counter11 = 0;
+        let counter12 = 0;
+
+
         // Function to increment a counter
-        function incrementCounter(counterNumber) {
-            switch (counterNumber) {
-                case 1:
+        function incrementCounter(counterId) {
+            switch (counterId) {
+                case 'counter1':
                     counter1++;
                     document.getElementById('counter1').textContent = counter1;
                     break;
-                case 2:
+                case 'counter2':
                     counter2++;
                     document.getElementById('counter2').textContent = counter2;
                     break;
-                case 3:
+                case 'counter3':
                     counter3++;
                     document.getElementById('counter3').textContent = counter3;
                     break;
-                case 4:
+                case 'counter4':
                     counter4++;
                     document.getElementById('counter4').textContent = counter4;
                     break;
-                case 5:
+                case 'counter5':
                     counter5++;
                     document.getElementById('counter5').textContent = counter5;
                     break;
-                case 6:
+                case 'counter6':
                     counter6++;
                     document.getElementById('counter6').textContent = counter6;
                     break;
-                case 7:
+                case 'counter7':
                     counter7++;
                     document.getElementById('counter7').textContent = counter7;
                     break;
-                case 8:
+                case 'counter8':
                     counter8++;
                     document.getElementById('counter8').textContent = counter8;
                     break;
+                case 'counter9':
+                    counter9++;
+                    document.getElementById('counter9').textContent = counter9;
+                    break;
+                case 'counter10':
+                    counter10++;
+                    document.getElementById('counter10').textContent = counter10;
+                    break;
+                case 'counter11':
+                    counter11++;
+                    document.getElementById('counter11').textContent = counter11;
+                    break;
+                case 'counter12':
+                    counter12++;
+                    document.getElementById('counter12').textContent = counter12;
+                    break;
+                // Add more cases for additional counters
             }
         }
+
         // Function to decrement a counter
-        function decrementCounter(counterNumber) {
-            switch (counterNumber) {
-                case 1:
+        function decrementCounter(counterId) {
+            switch (counterId) {
+                case 'counter1':
                     if (counter1 > 0) {
                         counter1--;
                         document.getElementById('counter1').textContent = counter1;
                     }
                     break;
-                case 2:
+                case 'counter2':
                     if (counter2 > 0) {
                         counter2--;
                         document.getElementById('counter2').textContent = counter2;
                     }
                     break;
-                case 3:
+                case 'counter3':
                     if (counter3 > 0) {
                         counter3--;
                         document.getElementById('counter3').textContent = counter3;
                     }
                     break;
-                case 4:
+                case 'counter4':
                     if (counter4 > 0) {
                         counter4--;
                         document.getElementById('counter4').textContent = counter4;
                     }
                     break;
-                case 5:
+                case 'counter5':
                     if (counter5 > 0) {
                         counter5--;
                         document.getElementById('counter5').textContent = counter5;
                     }
                     break;
-                case 6:
+                case 'counter6':
                     if (counter6 > 0) {
                         counter6--;
                         document.getElementById('counter6').textContent = counter6;
                     }
                     break;
-                case 7:
+                case 'counter7':
                     if (counter7 > 0) {
                         counter7--;
                         document.getElementById('counter7').textContent = counter7;
                     }
                     break;
-                case 8:
+                     case 'counter8':
                     if (counter8 > 0) {
                         counter8--;
                         document.getElementById('counter8').textContent = counter8;
                     }
                     break;
+                     case 'counter9':
+                    if (counter9 > 0) {
+                        counter9--;
+                        document.getElementById('counter9').textContent = counter9;
+                    }
+                    break;
+                     case 'counter10':
+                    if (counter10 > 0) {
+                        counter10--;
+                        document.getElementById('counter10').textContent = counter10;
+                    }
+                    break;
+                     case 'counter11':
+                    if (counter11 > 0) {
+                        counter11--;
+                        document.getElementById('counter11').textContent = counter11;
+                    }
+                    break;
+                     case 'counter12':
+                    if (counter12 > 0) {
+                        counter12--;
+                        document.getElementById('counter12').textContent = counter12;
+                    }
+                    break;
+                // Add more cases for additional counters
             }
         }
+
         // Function to navigate to the second page with counter values
         function goToSecondPage() {
             const counter1Value = counter1;
@@ -290,41 +373,48 @@
             const counter6Value = counter6;
             const counter7Value = counter7;
             const counter8Value = counter8;
+            const counter9Value = counter9;
+            const counter10Value = counter10;
+            const counter11Value = counter11;
+            const counter12Value = counter12;
+
+             // Add more variables for additional counters
+
             // Construct the URL with counter values as parameters
-            const url = `Order2.html?counter1=${counter1Value}&counter2=${counter2Value}&counter3=${counter3Value}
-            &counter4=${counter4Value}&counter5=${counter5Value}&counter6=${counter6Value}&counter7=${counter7Value}
-            &counter8=${counter8Value}`;
+                    const url = `LastOrder.html?counter1=${counter1}&counter2=${counter2}&counter3=${counter3}&counter4=${counter4}&counter5=${counter5}&counter6=${counter6}
+                    &counter7=${counter7}&counter8=${counter8}&counter9=${counter9}&counter10=${counter10}&counter11=${counter11}&counter12=${counter12}`;
+            // Add more parameters for additional counters
+
             // Redirect to the second page
             window.location.href = url;
         }
     </script>
- <footer>
-     <div class="footer">
+
+
+    <footer style="bottom: 0;">
+ <div class="footer">
         <div class="contact-info">
-            <h3>PART & SERVICE</h3>
-            <p>10 HP Motor</p>
-            <p>15 HP Motor</p>
-            <p>20 HP Motor</p>
-            <p>25 HP Motor</p>
-            <p>30 HP Motor</p>
-            <p>35 HP Motor</p>
+            <h3 style="color: black">GET IN TOUCH</h3>
+            <p class="p1">
+                <i class="fas fa-map-marker-alt"></i>
+                First floor, Shinde Complex, Plot11, Shinde Nagar, Pashan-NDA Road, Bavdhan, Pune-411021, Maharashtra, India
+            </p>
+            <p class="p1">
+                <i class="fas fa-phone"></i>
+            mitali.dharne@finitefour.com<br>WhatsApp - +91 8411820000</p>
         </div>
-
+        <div class="ourcompany">
+            <h3 style="color: black;">OUR COMPANY</h3>
+            <p class="p1">Customer Support</p>
+            <p class="p1">Global Impact</p>
+            <p class="p1">Technology & Innovation</p>
+        </div>
         <div>
-            <h3>ABOUT US</h3>
-            <p>Our Team</p>
-            <p>Send Enquiry</p>
-            <p>Terms & Conditions</p>
-            <p>Privacy Policy</p>
-        </div>
 
-        <div>
-            <h3>HELP</h3>
-            <p>Contact Us</p>
-            <p>Help Center</p>
-            <p>Talk To Sales</p>
-        </div>
-    </div>
-   </footer> 
+    
+      <iframe class="foo2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.3630910784386!2d73.77946607567299!3d18.
+      512487169420304!2m3!1f0!2f0!3f0!3m2!i1024!2i768!4f131!3m3!1m2!1s0x3bc2be5ab0a4ff93%3A0x3f9c3b2f8827ebcf!2sFinite%20four
+      %20office!5e0!3m2!1sen!2sin!4v169932098269!5m2!1sen!2sin"></iframe>
+    </div></div></footer>
 </body>
 </html>
