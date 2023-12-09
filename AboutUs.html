@@ -1,139 +1,321 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>About Us</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
     <style type="text/css">
-    body{
-        font-family: 'Poppins', sans-serif;
+    /*----------- Header Section -----------*/
+     body{
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(bg.jpg);
     }
-      .top {
-      width: 100%;
-      background-color: #024d87;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+          header {
+            background-color: #024d87;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #da7426;
+        }
+
+        #logo {
+             height: 80px;
+            width: 200px;
+            margin-left: 30px;
+        }
+
+        #menu-btn {
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+           margin-right: 8%;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+
+        }
+           nav li {
+            margin: 0 15px;
+        }
+       nav a{
+                color: white;
+                text-decoration: none;
+            }
+             .hover-underline {
+            display: inline-block;
+            position: relative;
+        }
+        .hover-underline::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: orange;
+            bottom: 0;
+            left: 0;
+            transition: width 0.9s;
+        }
+        .hover-underline:hover::before {
+            width: 100%;
+        }
+
+       /*----------- Header For Smaller Screen -----------*/
+
+          @media only screen and (max-width: 675px) and (max-width: 768px) {
+
+        #menu-btn {
+                    display: block;
+                    color: #da7426;
+                }
+            .login {
+                float: none;
+                margin: 10px;
+              }
+               nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 83px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+            }
+             nav.show {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+            nav a{
+                color: white;
+                text-decoration: none;
+            }
+   }
+
+          /*----------- Header For Smaller Screen Closed-----------*/
+
+   /*----------- Header Section Close-----------*/
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .ceo{
+            display: flex;
+            flex-direction: row;
+            height: 300px;
+            width: 1200px;
+            margin-top: 50px;
+            margin-left: 300px;
+        }
+        .text{
+            margin-left: 80px;
+            font-size: 18px;
+        }
+        .ceo img{
+            width: 450px;
+            height: 250px;
+        }
+        .team-member {
+            text-align: center;
+            margin: 10px;
+        }
+       span{
+            color: #da7426;
+        }
+        .team-member img {
+            width: 250px; /* Adjust the width as needed */
+            height: 250px; /* Adjust the height as needed */
+            border-radius: 50%;
+        }
+        .team-member h4{
+            color: #5605ff;
+        }
+        .footer {
+            display: flex;
+            width: 100%;
+            height: 250px;
+            background-color: #eee;
+            margin-top:10px;
+        }
+        .footer div {
+            flex: 1;
+            text-align: center;
+        }
+        .contact-info {
+            text-align: center;
+        }
+        .symbol {
+            font-size: 50px; /* Adjust the icon size as needed */
+        }
+        .foo2{
+            width: 90%;
+            height: 100%;
+        }
+      .p1{
+      font-size:16px;
+      color: black;
+      }
+         @media only screen and (max-width: 768px) {
+        .ceo {
+            flex-direction: column;
+            margin-left: 20px; /* Adjust as needed */
+            width: auto;
+        }
+        .text {
+            margin-left: 0;
+            text-align: center;
+        }
+        .ceo img {
+            width: 100%; /* Make the image responsive */
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .Members{
+            margin-top: 300px;
+        }
     }
-    .top img {
-      height: 80px;
-      width: 200px;
-      margin-left: 30px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin-right: 30px;
-    }
-    nav li {
-      margin: 0 10px;
+      @media only screen and (min-width: 1200px) {
+        .ceo {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .text {
+            margin-left: 40px; /* Adjust as needed */
+            text-align: left;
+        }
+        .ceo img {
+            width: 350px; /* Adjust as needed */
+            height: 250px; /* Adjust as needed */
+            margin-right: 20px; /* Adjust as needed */
+        }
     }
 
-    nav a {
-      text-decoration: none;
-      color: white;
-      position: relative;
-    }
-.hover-underline {
- 
-    display: inline-block;
-    position: relative; 
-}
-.hover-underline::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 3px;
-    background-color: orange;
-    bottom: 0;
-    left: 0;
-    transition: width 0.9s ; 
-}
-
-.hover-underline:hover::before {
-    width: 100%;
-}
-.content{
-    width: 100%;
-    height: 400px;
-   display: flex;
-   justify-content: space-between;
-}
-.information{
-   width: 50%;
-   height: auto;
-   color: black;
-   text-align: center;
-   background-color: transparent;
-   border-radius: 20px;
-   margin-top: 30px;
-}
-p{
-    color: black;
-    font-size: 18px;
-    text-align: center;
-}
-  h2{
-  color: #da7426;
-}
-.div2{
-  width: 50%;
-margin-top: 30px;
-border-radius: 20px;
-}
-.div3{
-    width: 30%;
-    margin-top: 10px;
-    margin-left: 30%;
-    border-radius: 20px;
-    align-content: center;
-    align-items: center;
-}
-h2:hover{
-    text-decoration: underline;
-    text-decoration-color: #da7426;
+     @media (max-width: 675px) {
+         .ourcompany , .foo2 {
+            display: none;
+        }
+         .footer:nth-child(1) {
+    display: block; /* Display the first div on small screens */
+    line-height: 40px;
+    height: auto;
+  }
+ .p1{
+      margin-top: 10px;
+      }
 }
     </style>
 </head>
 <body>
-  <header>
-   <div class="top">
-    <img src="logo.png" alt="Logo">
-    <nav>
-      <ul>
-        <li class="hover-underline"><a href="index.html">Home</a></li>
-        <li class="hover-underline"><a href="AboutUs.html">About Us</a></li>
-        <li class="hover-underline"><a href="FirstPage.html">Products</a></li>
-        <li class="hover-underline"><a href="Service_Support.html">Service & Support</a></li>
-        <li class="hover-underline"><a href="Contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
 
 
-<nav>
-    <div class="content">
-       <div class="information">
-<h2> PRODUCT ENGINEERING SERVICES</h2> 
-<p> Mechanical Design Services(Onsite & Offshore)</p>
-<p>Embedded Technologies</p>
-<p> Software & IT Services </p>
-<p>Medical Equipment Engineering</p>
-<p> Software Product Sales</p>
-<p>We are authorized channel partners for Altair.</p>
-
+ <header>
+        <img src="logo.png" alt="Company Logo" id="logo">
+        <div id="menu-btn">&#9776;</div>
+        <nav>
+            <ul>
+                <li class="hover-underline"><a href="index.html">Home</a></li>
+                <li class="hover-underline"><a href="AboutUs.html">About Us</a></li>
+                <li class="hover-underline"><a href="FirstPage.html">Products</a></li>
+                <li class="hover-underline"><a href="Service_Support.html">Service & Support</a></li>
+                <li class="hover-underline"><a href="Contact.html">Contact Us</a></li>
+            </ul>
         </div>
-    <img src="worker.jpg" style="border-radius: 20px;" width="100%" height="90%" class="div2">
+        
+        </nav>
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('show');
+        });
+    </script>
+        </header>
 
+
+
+
+
+
+<div class="ceo">
+      <img src="ceo.jpg" >
+      <div class="text">
+      <h4>Mr. Abhijit Majage (C.E.O)</h4>
+        <p>He is currently the C.E.O of Finite 4 Group of Companies.He is a Member-Board of Director for Power Vision , Defence Division, Innovations: Incubator Division. Previously he has worked with Tata Johnson Controls (now known as ADIENT) wherein the tenure was 12+ years.He has earned M.tech Design & Engineering Degree from IIT Delhi in the year 1999.He is also an alumni of ILS law college Pune.</p>
+    </div>
+</div>    
+
+<div class="Members">
+        <h1 align="center">Executive <span>Members</span></h1>
+
+</div>
+    <div class="team-container">
+    <div class="team-member">
+        <img src="hr.jpg" alt="Team Member 2">
+        <p>Ranjana Das</p>
+        <h4>Human Resources</h4>
+    </div>
+      <div class="team-member">
+        <img src="Momin.jpg" alt="Team Member 4">
+        <p>Momin Khan</p>
+        <h4>Delivery Manager</h4>
+    </div>  
+    <div class="team-member">
+        <img src="prasad.jpg" alt="Team Member 3">
+        <p>Prasad Kulkarni</p>
+        <h4>Operations</h4>
+    </div>
+    <div class="team-member">
+        <img src="Mitali.jpg" alt="Team Member 4">
+        <p>Mitali Dharne</p>
+        <h4>Business Development</h4>
     </div>
 
-<div class="div3">
-    <h2 align="center">ABOUT US</h2>
-     <p class="para">Finite 4 was established in 2007 with a view to provide best in class, cost effective, and efficient 
-Engineering services globally.We provide services to clients in India, Europe, Asia-Pacific, Africa, USA and many soon.
-The agility of Finite 4 in adopting the new technology & creating expertise has helped it to grow significantly even during the 
-economic slowdown.The growth of company during the period of last few years has been 6 times that of the market's growth.</p>
 </div>
 
-</nav>
+
+<footer style="bottom: 0;">
+ <div class="footer">
+        <div class="contact-info">
+            <h3 style="color: black">GET IN TOUCH</h3>
+            <p class="p1">
+                <i class="fas fa-map-marker-alt"></i>
+                First floor, Shinde Complex, Plot11, Shinde Nagar, Pashan-NDA Road, Bavdhan, Pune-411021, Maharashtra, India
+            </p>
+            <p class="p1">
+                <i class="fas fa-phone"></i>
+            mitali.dharne@finitefour.com<br>WhatsApp - +91 8411820000</p>
+        </div>
+        <div class="ourcompany">
+            <h3 style="color: black;">OUR COMPANY</h3>
+            <p class="p1">Customer Support</p>
+            <p class="p1">Global Impact</p>
+            <p class="p1">Technology & Innovation</p>
+        </div>
+        <div>
+
+    
+      <iframe class="foo2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.3630910784386!2d73.77946607567299!3d18.
+      512487169420304!2m3!1f0!2f0!3f0!3m2!i1024!2i768!4f131!3m3!1m2!1s0x3bc2be5ab0a4ff93%3A0x3f9c3b2f8827ebcf!2sFinite%20four
+      %20office!5e0!3m2!1sen!2sin!4v169932098269!5m2!1sen!2sin"></iframe>
+    </div></div></footer>
 </body>
 </html>
