@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
       
 <title>Contact</title>
-	<style type="text/css">
-	/*----------- Header Section -----------*/
+  <style type="text/css">
+  /*----------- Header Section -----------*/
    body{
            font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -135,12 +135,12 @@
 .hover-underline:hover::before {
     width: 100%;
 }
-		.p , a{
-		color:black;
+    .p , a{
+    color:black;
     text-decoration: none;
         }
         span{
-        	color: #da7426;
+          color: #da7426;
         }
         .media{
   margin-top: 20px;
@@ -168,6 +168,32 @@
           text-decoration: underline;
           color: #da7426;
         }
+         .footer {
+            display: flex;
+            width: 100%;
+            height: 250px;
+            background-color: #eee;
+            margin-top:10px;
+        }
+        .footer div {
+            flex: 1;
+            text-align: center;
+            margin-top: 20px; 
+        }
+        .contact-info {
+            text-align: center;
+        }
+        .symbol {
+            font-size: 50px; /* Adjust the icon size as needed */
+        }
+        .foo2{
+            width: 90%;
+            height: 100%;
+        }
+      .p1{
+      font-size:16px;
+      color: black;
+      }
          @media (max-width: 675px) {
           .media{
          flex-direction: column;
@@ -188,9 +214,19 @@
             margin-left: 0px;
             color: white;
         }
-          
+          .ourcompany , .foo2 {
+            display: none;
+        }
+         .footer:nth-child(1) {
+    display: block; /* Display the first div on small screens */
+    line-height: 40px;
+    height: auto;
+  }
+ .p1{
+      margin-top: 10px;
+      }
 }
-	</style>
+  </style>
 </head>
 <body>
  <header>
@@ -230,7 +266,6 @@
         height="450px" class="map"></iframe>
     </div>
 
-    <footer>
       <div class="media">
 <div class="in">
  <img src="in.jpg" alt="Your Image" width="50px" height="50px">
@@ -246,6 +281,32 @@
     <a href="mailto: vishal.pawar@finite4.com"><span class="name" >CONNECT</span></a>
 </div>
 </div>
-    </footer>
+    
+
+    <footer style="bottom: 0;">
+ <div class="footer">
+        <div class="contact-info">
+            <h3 style="color: black">GET IN TOUCH</h3>
+            <p class="p1">
+                <i class="fas fa-map-marker-alt"></i>
+                First floor, Shinde Complex, Plot11, Shinde Nagar, Pashan-NDA Road, Bavdhan, Pune-411021, Maharashtra, India
+            </p>
+            <p class="p1">
+                <i class="fas fa-phone"></i>
+            mitali.dharne@finitefour.com<br>WhatsApp - +91 8411820000</p>
+        </div>
+        <div class="ourcompany">
+            <h3 style="color: black;">OUR COMPANY</h3>
+            <p class="p1">Customer Support</p>
+            <p class="p1">Global Impact</p>
+            <p class="p1">Technology & Innovation</p>
+        </div>
+        <div>
+
+    
+      <iframe class="foo2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.3630910784386!2d73.77946607567299!3d18.
+      512487169420304!2m3!1f0!2f0!3f0!3m2!i1024!2i768!4f131!3m3!1m2!1s0x3bc2be5ab0a4ff93%3A0x3f9c3b2f8827ebcf!2sFinite%20four
+      %20office!5e0!3m2!1sen!2sin!4v169932098269!5m2!1sen!2sin"></iframe>
+    </div></div></footer>
 </body>
 </html>
