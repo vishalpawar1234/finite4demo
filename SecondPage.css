@@ -177,7 +177,7 @@
         .action-buttons {
             display: flex;
             justify-content: space-between;
-            width: 100%;
+            width: 101%;
             margin: 10px 0;
         }
 
