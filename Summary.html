@@ -15,7 +15,7 @@
             align-items: center;
             height: 100vh;
         }
- span{
+     span{
             color: #da7426;
         }
         #container {
@@ -28,7 +28,6 @@
             overflow: hidden;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
-
         #registration-form, #order-summary {
             background-color: #3498db;
             color: #fff;
@@ -38,25 +37,21 @@
             min-width: 300px;
             box-sizing: border-box;
         }
-
         h1 {
             color: #fff;
             font-size: 28px;
             margin-bottom: 20px;
         }
-
         form {
             display: flex;
             flex-direction: column;
             align-items: stretch;
         }
-
         label {
             margin-bottom: 8px;
             color: #ecf0f1;
             font-size: 17px;
         }
-
         input, textarea, select {
             width: 100%;
             padding: 10px;
@@ -67,7 +62,6 @@
             background-color: #ecf0f1;
             color: #333;
         }
-
         button {
             background-color: #2ecc71;
             color: #fff;
@@ -79,11 +73,9 @@
             font-size: 16px;
             transition: background-color 0.3s;
         }
-
         button:hover {
             background-color: #27ae60;
         }
-
         #order-summary {
             background-color: #2c3e50;
             color: #fff;
@@ -94,7 +86,6 @@
             box-sizing: border-box;
             margin-top: 20px;
         }
-
         .product-container {
             margin-top: 20px;
             padding: 10px;
@@ -104,19 +95,16 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .product-name {
             font-size: 18px;
             font-weight: bold;
             color: #ecf0f1;
             margin-right: 20px;
         }
-
         .product-count {
             font-size: 16px;
             color: #bdc3c7;
         }
-
         /* Added style for the horizontal line */
         hr {
             border: none;
@@ -124,17 +112,14 @@
             width: 100%;
             margin: 20px 0;
         }
-
         @media screen and (min-width: 768px) {
             #container {
                 flex-direction: row;
             }
-
             #registration-form, #order-summary {
                 flex: 1;
                 margin: 20px;
             }
-
             #order-summary {
                 margin-left: 0;
             }
@@ -168,7 +153,7 @@
                     <option value="bankTransfer">Bank Transfer</option>
                 </select>
 
-                <button type="button" onclick="registerUser()">Order</button>
+            <button type="submit" onclick="registerUser()">Order</button> 
             </form>
         </div>
 
@@ -236,11 +221,24 @@
             }
         }
 
-        // Function to handle user registration
         function registerUser() {
-            // Add your logic to handle user registration here
-            alert('Order Confirmed...!!');
+        // Get all the input elements
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const mobileNumber = document.getElementById('mobileNumber').value;
+        const billingAddress = document.getElementById('billingAddress').value;
+        const country = document.getElementById('country').value;
+        const paymentMethod = document.getElementById('paymentMethod').value;
+
+        // Check if any of the required fields is empty
+        if (!firstName || !lastName || !mobileNumber || !billingAddress || !country || !paymentMethod) {
+            
+        } else {
+            // All required fields are filled, display the alert
+            alert('Order confirmed...!!');
         }
+    }
+
     </script>
 </body>
 </html>
